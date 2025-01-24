@@ -11,4 +11,6 @@ Hello there, this is a package that can be used to launch your robot in both Gaz
    gz sdf -p <file_name>.urdf > ../../models/<folder_name>/model.sdf
 6. Make sure that the urdf file has an empty link named "world".
 
+## More updates coming soon
+
 
