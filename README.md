@@ -30,7 +30,7 @@ This package allows you to launch your robot in both Gazebo and Rviz. Follow the
    # Convert .urdf to .sdf and save in the models folder
    gz sdf -p <file_name>.urdf > ../../models/<folder_name>/model.sdf
 
-5. **Export Gazebo models file**
+5. **Export Gazebo models file**  
    Add this line in the `export` section `package.xml` file:
    ```bash
    <gazebo_ros gazebo_model_path="${prefix}/models"/>
