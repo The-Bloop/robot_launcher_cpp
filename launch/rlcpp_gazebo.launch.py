@@ -21,7 +21,7 @@ def generate_launch_description():
     world = os.path.join(
         pkg_share,
         'worlds',
-        'empty.world'
+        'turtlebot3_world.world'
     )
 
     #Initializing Launch Configurations
@@ -52,7 +52,7 @@ def generate_launch_description():
         
     declare_gazebo_log_cmd = DeclareLaunchArgument(
         name='gazebo_log',
-        default_value="true",
+        default_value="false",
         description='Indicates gazebo verbosity'
     )
 
