@@ -28,8 +28,8 @@ def generate_launch_description():
 
     urdf_model = LaunchConfiguration('urdf_model', default=urdf_model_path)
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='0.0')
-    y_pose = LaunchConfiguration('y_pose', default='0.0')
+    x_pose = LaunchConfiguration('x_pose', default='0.5')
+    y_pose = LaunchConfiguration('y_pose', default='0.5')
     use_rviz = LaunchConfiguration('use_rviz', default='true')
     sdf_model = LaunchConfiguration('sdf_model', default=sdf_model_path)
 
@@ -93,11 +93,11 @@ def generate_launch_description():
         )
     )
 
-    robot_localization_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_share, 'launch', 'robot_localization.launch.py')
-        ),
-    )
+    #robot_localization_cmd = IncludeLaunchDescription(
+    #    PythonLaunchDescriptionSource(
+    #        os.path.join(pkg_share, 'launch', 'robot_localization.launch.py')
+    #    ),
+    #)
 
     #Creating Nodes
     #To control log level of nodes add the following to the node's Arguments:
@@ -162,7 +162,7 @@ def generate_launch_description():
     #ld.add_action(ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'], output='screen'))
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(start_gazebo_ros_spawner_cmd)
-    ld.add_action(robot_localization_cmd)
+    #ld.add_action(robot_localization_cmd)
     ld.add_action(start_rviz_cmd)
     
 
