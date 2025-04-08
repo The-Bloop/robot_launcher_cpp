@@ -34,7 +34,7 @@
 </link> 
 
 <joint name="wheell_joint" type="continuous">
-    <origin xyz="-0.1 0.1125 0.05" rpy="1.571 0 0"/>
+    <origin xyz="-0.1 0.1125 0.05" rpy="-1.571 0 0"/>
     <parent link="base_link"/>
     <child link="wheell_link"/>
     <axis xyz="0 0 1"/>
@@ -51,7 +51,7 @@
         <geometry>
             <mesh filename="package://robot_launcher_cpp/meshes/wheel.stl" scale="0.01 0.01 0.01"/>
         </geometry>
-        <material name="red"/>
+        <material name="yellow"/>
     </visual>
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -79,7 +79,7 @@
         <geometry>
             <mesh filename="package://robot_launcher_cpp/meshes/wheel.stl" scale="0.01 0.01 0.01"/>
         </geometry>
-        <material name="red"/>
+        <material name="yellow"/>
     </visual>
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -90,7 +90,7 @@
 </link>
 
 <joint name="wheeldl_joint" type="continuous">
-    <origin xyz="0.1 0.1125 0.05" rpy="1.571 0 0"/>
+    <origin xyz="0.1 0.1125 0.05" rpy="-1.571 0 0"/>
     <parent link="base_link"/>
     <child link="wheeldl_link"/>
     <axis xyz="0 0 1"/>
@@ -155,7 +155,7 @@
     <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.116"/>
-        <inertia ixx="1.47e-05" iyy="1.03e-04" izz="1.05e-04" ixy="0" ixz="0" iyz="0"/>
+        <inertia ixx="1.03e-04" iyy="1.47e-05" izz="1.05e-04" ixy="0" ixz="0" iyz="0"/>
     </inertial>
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -190,7 +190,7 @@
     <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.232"/>
-        <inertia ixx="1.1e-04" iyy="1.1e-04" izz="3.09e-05" ixy="0" ixz="0" iyz="0"/>
+        <inertia ixx="1.102e-04" iyy="1.102e-04" izz="1.856e-04" ixy="0" ixz="0" iyz="0"/>
     </inertial>
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>

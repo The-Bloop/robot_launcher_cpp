@@ -28,8 +28,8 @@ def generate_launch_description():
 
     urdf_model = LaunchConfiguration('urdf_model', default=urdf_model_path)
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='0.5')
-    y_pose = LaunchConfiguration('y_pose', default='0.5')
+    x_pose = LaunchConfiguration('x_pose', default='-0.5')
+    y_pose = LaunchConfiguration('y_pose', default='-0.5')
     use_rviz = LaunchConfiguration('use_rviz', default='true')
     sdf_model = LaunchConfiguration('sdf_model', default=sdf_model_path)
 

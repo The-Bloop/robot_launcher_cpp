@@ -9,7 +9,7 @@
     </link>
 
     <link name='base_link'>
-      <pose relative_to='base_joint'>0 0 0.0875 0 -0 0</pose>
+      <pose relative_to='base_joint'>0 0 0.0875 0 0 0</pose>
       <inertial>
         <pose>0 0 0.0875 0 -0 0</pose>
         <mass>6.935</mass>
@@ -23,7 +23,7 @@
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
-        <pose>0 0 0.0875 0 -0 0</pose>
+        <pose>0 0 0.0875 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -40,7 +40,7 @@
         </surface>
       </collision>
       <visual name='base_link_visual'>
-        <pose>0 0 0.0875 0 -0 0</pose>
+        <pose>0 0 0.0875 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -125,9 +125,9 @@
     </link>
 
     <link name='camera_link'>
-      <pose relative_to='camera_joint'>0 0 0 0 -0 0</pose>
+      <pose relative_to='camera_joint'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.116</mass>
         <inertia>
           <ixx>0.000103</ixx>
@@ -139,7 +139,7 @@
         </inertia>
       </inertial>
       <collision name='camera_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -156,7 +156,7 @@
         </surface>
       </collision>
       <visual name='camera_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -201,21 +201,21 @@
 		</link>
 
     <link name='base_scan'>
-      <pose relative_to='lidar_joint'>0 0 0 0 -0 0</pose>
+      <pose relative_to='lidar_joint'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.232</mass>
         <inertia>
-          <ixx>0.00011</ixx>
+          <ixx>1.102e-04</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>3.09e-05</iyy>
+          <iyy>1.102e-04</iyy>
           <iyz>0</iyz>
-          <izz>0.00011</izz>
+          <izz>1.856e-04</izz>
         </inertia>
       </inertial>
       <collision name='base_scan_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -232,7 +232,7 @@
         </surface>
       </collision>
       <visual name='base_scan_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -261,7 +261,7 @@
           </scan>
           <range>
             <min>0.12</min>
-            <max>3.5</max>
+            <max>20</max>
             <resolution>0.015</resolution>
           </range>
           <noise>
@@ -281,9 +281,9 @@
     </link>
 
     <link name='wheell_link'>
-      <pose relative_to='wheell_joint'>0 0 0 0 -0 0</pose>
+      <pose relative_to='wheell_joint'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.303</mass>
         <inertia>
           <ixx>0.000205</ixx>
@@ -295,7 +295,7 @@
         </inertia>
       </inertial>
       <collision name='wheell_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -312,7 +312,7 @@
         </surface>
       </collision>
       <visual name='wheell_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -331,7 +331,7 @@
     <link name='wheelr_link'>
       <pose relative_to='wheelr_joint'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.303</mass>
         <inertia>
           <ixx>0.000205</ixx>
@@ -343,7 +343,7 @@
         </inertia>
       </inertial>
       <collision name='wheelr_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -360,7 +360,7 @@
         </surface>
       </collision>
       <visual name='wheelr_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -379,7 +379,7 @@
     <link name='wheeldl_link'>
       <pose relative_to='wheeldl_joint'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.303</mass>
         <inertia>
           <ixx>0.000205</ixx>
@@ -391,7 +391,7 @@
         </inertia>
       </inertial>
       <collision name='wheeldl_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -408,7 +408,7 @@
         </surface>
       </collision>
       <visual name='wheeldl_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -417,7 +417,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Yellow</name>
+            <name>Gazebo/Red</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -425,9 +425,9 @@
     </link>
 
     <link name='wheeldr_link'>
-      <pose relative_to='wheeldr_joint'>0 0 0 0 -0 0</pose>
+      <pose relative_to='wheeldr_joint'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.303</mass>
         <inertia>
           <ixx>0.000205</ixx>
@@ -439,7 +439,7 @@
         </inertia>
       </inertial>
       <collision name='wheeldr_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -456,7 +456,7 @@
         </surface>
       </collision>
       <visual name='wheeldr_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -465,7 +465,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Yellow</name>
+            <name>Gazebo/Red</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -475,7 +475,7 @@
     <!--JOINTS-->
 
     <joint name='base_joint' type='fixed'>
-      <pose relative_to="base_footprint">0 0 0.0 0 -0 0</pose>
+      <pose relative_to="base_footprint">0 0 0.0 0 0 0</pose>
       <parent>base_footprint</parent>
       <child>base_link</child>
     </joint>
@@ -490,7 +490,7 @@
     </joint>
 
     <joint name='camera_joint' type='fixed'>
-      <pose relative_to='base_link'>0.165 0 0.0875 0 -0 0</pose>
+      <pose relative_to='base_link'>0.165 0 0.0875 0 0 0</pose>
       <parent>base_link</parent>
       <child>camera_link</child>
       <axis>
@@ -505,7 +505,7 @@
     </joint>
 
     <joint name='lidar_joint' type='fixed'>
-      <pose relative_to='base_link'>0.1 0 0.14 0 -0 0</pose>
+      <pose relative_to='base_link'>0.1 0 0.14 0 0 0</pose>
       <parent>base_link</parent>
       <child>base_scan</child>
       <axis>
@@ -514,7 +514,7 @@
     </joint>
 
     <joint name='wheell_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.1 0.1125 0.05 1.571 -0 0</pose>
+      <pose relative_to='base_link'>-0.1 0.1125 0.05 -1.571 0 0</pose>
       <parent>base_link</parent>
       <child>wheell_link</child>
       <axis>
@@ -532,7 +532,7 @@
     </joint>
 
     <joint name='wheeldl_joint' type='revolute'>
-      <pose relative_to='base_link'>0.1 0.1125 0.05 1.571 -0 0</pose>
+      <pose relative_to='base_link'>0.1 0.1125 0.05 -1.571 0 0</pose>
       <parent>base_link</parent>
       <child>wheeldl_link</child>
       <axis>
@@ -561,7 +561,7 @@
       <left_joint>wheeldl_joint</left_joint>
       <right_joint>wheeldr_joint</right_joint>
 
-      <wheel_separation>0.2</wheel_separation>
+      <wheel_separation>0.225</wheel_separation>
       <wheel_diameter>0.1</wheel_diameter>
       <max_wheel_torque>20</max_wheel_torque>
       <max_wheel_acceleration>1.0</max_wheel_acceleration>

@@ -14,11 +14,11 @@
 </gazebo>
 
 <gazebo reference='wheeldl_link'>
-  <material>Gazebo/Yellow</material>
+  <material>Gazebo/Red</material>
 </gazebo>
 
 <gazebo reference='wheeldr_link'>
-  <material>Gazebo/Yellow</material>
+  <material>Gazebo/Red</material>
 </gazebo>
 
 <gazebo reference='camera_link'>
@@ -42,8 +42,8 @@
                 <format>R8G8B8</format>
             </image>
             <clip>
-                <near>0.02</near>
-                <far>300</far>
+                <near>0.12</near>
+                <far>20</far>
             </clip>
             <noise>
                 <type>gaussian</type>
@@ -172,7 +172,7 @@
     <right_joint>wheeldr_joint</right_joint>
 
     <!-- kinematics -->
-    <wheel_separation>0.2</wheel_separation>
+    <wheel_separation>0.225</wheel_separation>
     <wheel_diameter>0.1</wheel_diameter>
 
     <!-- limits -->
@@ -188,7 +188,7 @@
 
     <!--<odometry_topic>odom</odometry_topic>-->
     <odometry_frame>odom</odometry_frame>
-    <robot_base_frame>base_link</robot_base_frame>
+    <robot_base_frame>base_footprint</robot_base_frame>
   </plugin>
 </gazebo>
 
