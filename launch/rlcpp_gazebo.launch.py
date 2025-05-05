@@ -13,23 +13,23 @@ def generate_launch_description():
 
     #File Paths
     pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')
-    urdf_model_path = os.path.join(pkg_share, 'urdf/wrv3/wrv3.xacro')
-    sdf_model_path = os.path.join(pkg_share, 'models', 'wrv3', 'model2.sdf')
+    urdf_model_path = os.path.join(pkg_share, 'urdf/wrv4/wrv4.xacro')
+    sdf_model_path = os.path.join(pkg_share, 'models', 'wrv4', 'model.sdf')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
     robot_description_raw = xacro.process_file(urdf_model_path).toxml()
     world = os.path.join(
         pkg_share,
         'worlds',
-        'empty.world'
+        'turtlebot3_world.world'
     )
 
     #Initializing Launch Configurations
 
     urdf_model = LaunchConfiguration('urdf_model', default=urdf_model_path)
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='0.0')
-    y_pose = LaunchConfiguration('y_pose', default='0.0')
+    x_pose = LaunchConfiguration('x_pose', default='-0.5')
+    y_pose = LaunchConfiguration('y_pose', default='-0.5')
     use_rviz = LaunchConfiguration('use_rviz', default='true')
     sdf_model = LaunchConfiguration('sdf_model', default=sdf_model_path)
 
@@ -52,7 +52,7 @@ def generate_launch_description():
         
     declare_gazebo_log_cmd = DeclareLaunchArgument(
         name='gazebo_log',
-        default_value="true",
+        default_value="false",
         description='Indicates gazebo verbosity'
     )
 
@@ -125,7 +125,7 @@ def generate_launch_description():
         package='gazebo_ros',
         executable='spawn_entity.py',
         arguments=[
-            '-entity', 'WheelRobotv3',
+            '-entity', 'WheelRobotv4',
             '-file', sdf_model_path,
             '-x', x_pose,
             '-y', y_pose,

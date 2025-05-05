@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<robot name="wrv4" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="materials.xacro"/>
+
+<link name="base_footprint"/>
+
+<joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0.0875" rpy="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+</joint>
+
+<link name="base_link">
+    <inertial>
+        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+        <mass value="6.935"/>
+        <inertia ixx="0.026" iyy="0.055" izz="0.075" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+        <geometry>
+            <box size=".30 .20 .075"/><!-- scale="0.01 0.01 0.01"/-->
+        </geometry>
+        <material name="white"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+        <geometry>
+            <box size=".30 .20 .075"/><!-- scale="0.01 0.01 0.01"/-->
+        </geometry>
+    </collision>
+</link> 
+
+<joint name="wheel2l_joint" type="continuous">
+    <origin xyz="-0.1 0.1125 -0.0375" rpy="-1.571 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel2l_link"/>
+    <axis xyz="0 0 1"/>
+</joint>
+
+<link name="wheel2l_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.303"/>
+        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="yellow"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel2r_joint" type="continuous">
+    <origin xyz="-0.1 -0.1125 -0.0375" rpy="-1.571 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel2r_link"/>
+    <axis xyz="0 0 1"/>
+</joint>
+
+<link name="wheel2r_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.303"/>
+        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="yellow"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel1l_joint" type="continuous">
+    <origin xyz="0.1 0.1125 -0.0375" rpy="-1.571 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel1l_link"/>
+    <axis xyz="0 0 1"/>
+</joint>
+
+<link name="wheel1l_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.303"/>
+        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel1r_joint" type="continuous">
+    <origin xyz="0.1 -0.1125 -0.0375" rpy="-1.571 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel1r_link"/>
+    <axis xyz="0 0 1"/>
+</joint>
+
+<link name="wheel1r_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.303"/>
+        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="camera_joint" type="fixed">
+    <origin xyz="0.165 0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+</joint>
+
+<link name="camera_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="1.03e-04" iyy="1.47e-05" izz="1.05e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.03 0.1 0.025"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.03 0.1 0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0.015 0 0" rpy="0 1.57 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_color_link"/>
+</joint>
+
+<link name="camera_color_link"/>
+
+<joint name="lidar_joint" type="fixed">
+    <origin xyz="0.1 0 0.0525" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base_scan"/>
+</joint>
+
+<link name="base_scan">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.232"/>
+        <inertia ixx="1.102e-04" iyy="1.102e-04" izz="1.856e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.04" length="0.03"/>
+        </geometry>
+        <material name="green"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.04" length="0.03"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+</joint>
+
+<link name="imu_link">
+</link>
+
+<xacro:include filename="wrv4.gazebo"/>
+
+</robot>
