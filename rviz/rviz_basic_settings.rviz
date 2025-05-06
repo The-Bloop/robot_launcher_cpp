@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /Grid1
         - /RobotModel1/Mass Properties1
+        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 1160
@@ -124,7 +125,7 @@ Visualization Manager:
       Frames:
         All Enabled: false
         base_footprint:
-          Value: false
+          Value: true
         base_link:
           Value: false
         base_scan:
@@ -140,16 +141,16 @@ Visualization Manager:
         odom:
           Value: true
         wheel1l_link:
-          Value: false
+          Value: true
         wheel1r_link:
-          Value: false
+          Value: true
         wheel2l_link:
-          Value: true
+          Value: false
         wheel2r_link:
-          Value: true
+          Value: false
       Marker Scale: 1
       Name: TF
-      Show Arrows: false
+      Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
@@ -171,9 +172,8 @@ Visualization Manager:
             wheel2r_link:
               {}
         map:
-          {}
-        odom:
-          {}
+          odom:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -206,6 +206,7 @@ Visualization Manager:
         BaseFootprint: true
         Grid: true
         LaserScan: true
+        LocalCostMap: true
         Map: true
         Path: true
         RobotModel: true
@@ -272,7 +273,7 @@ Visualization Manager:
       Color Scheme: map
       Draw Behind: false
       Enabled: true
-      Name: Map
+      Name: LocalCostMap
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -362,7 +363,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 7.170228004455566
+      Distance: 6.766057968139648
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -380,7 +381,7 @@ Visualization Manager:
       Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.13043212890625
+      Yaw: 3.1054418087005615
     Saved: ~
 Window Geometry:
   Camera:

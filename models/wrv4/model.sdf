@@ -298,14 +298,6 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='wheel2l_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -346,14 +338,6 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='wheel2r_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -394,14 +378,6 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='wheel1l_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -442,14 +418,6 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='wheel1r_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
