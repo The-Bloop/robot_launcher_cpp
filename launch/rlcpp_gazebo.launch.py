@@ -1,5 +1,4 @@
 import os
-# import xacro
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, ExecuteProcess
@@ -14,10 +13,8 @@ def generate_launch_description():
     #File Paths
     pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')
     urdf_model_path = os.path.join(pkg_share, 'urdf/wrv4/wrv4.urdf.xacro')
-    sdf_model_path = os.path.join(pkg_share, 'models', 'wrv4', 'model.sdf')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
-    # robot_description_raw = xacro.process_file(urdf_model_path).toxml()
     world = os.path.join(
         pkg_share,
         'worlds',
@@ -31,7 +28,6 @@ def generate_launch_description():
     x_pose = LaunchConfiguration('x_pose', default='-0.5')
     y_pose = LaunchConfiguration('y_pose', default='-0.5')
     use_rviz = LaunchConfiguration('use_rviz', default='true')
-    sdf_model = LaunchConfiguration('sdf_model', default=sdf_model_path)
 
     logger = LaunchConfiguration('log_level', default=["info"])
     gazebo_log = LaunchConfiguration('gazebo_log', default="false")
@@ -138,6 +134,7 @@ def generate_launch_description():
         ],
         output='screen',
     )
+    
     rviz_node = Node(
         condition=IfCondition(use_rviz),
         package='rviz2',
