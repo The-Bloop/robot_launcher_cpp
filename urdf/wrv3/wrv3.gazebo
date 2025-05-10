@@ -5,20 +5,24 @@
   <material>Gazebo/White</material>
 </gazebo>
 
-<gazebo reference='wheell_link'>
+<gazebo reference='wheelfl_link'>
   <material>Gazebo/Red</material>
 </gazebo>
 
-<gazebo reference='wheelr_link'>
+<gazebo reference='wheelfr_link'>
   <material>Gazebo/Red</material>
 </gazebo>
 
-<gazebo reference='wheeldl_link'>
-  <material>Gazebo/Red</material>
+<gazebo reference='wheelbl_link'>
+  <material>Gazebo/Yellow</material>
+  <!-- <mu1 value="0.0"/>
+  <mu2 value="0.0"/> -->
 </gazebo>
 
-<gazebo reference='wheeldr_link'>
-  <material>Gazebo/Red</material>
+<gazebo reference='wheelbr_link'>
+  <material>Gazebo/Yellow</material>
+  <!-- <mu1 value="0.0"/>
+  <mu2 value="0.0"/> -->
 </gazebo>
 
 <gazebo reference='camera_link'>
@@ -71,8 +75,8 @@
         </horizontal>
       </scan>
       <range>
-        <min>0.120000</min>
-        <max>3.5</max>
+        <min>0.12</min>
+        <max>20</max>
         <resolution>0.015000</resolution>
       </range>
       <noise>
@@ -93,7 +97,7 @@
 
 <gazebo reference="imu_link">
   <sensor name="imu_sensor" type="imu">
-   <plugin filename="libgazebo_ros_imu_sensor.so" name="wrv3_imu">
+   <plugin filename="libgazebo_ros_imu_sensor.so" name="wrv4_imu">
       <ros>
         <!--<namespace>/wrv2</namespace>-->
         <remapping>~/out:=imu</remapping>
@@ -161,15 +165,17 @@
 </gazebo>
 
 <gazebo>
-  <plugin name='wrv3_diff_drive' filename='libgazebo_ros_diff_drive.so'>
+  <plugin name='wrv4_diff_drive' filename='libgazebo_ros_diff_drive.so'>
     <ros>
       <!--<namespace>/wrv3</namespace>-->
     </ros>
 
     <update_rate>30</update_rate>
     <!-- wheels -->
-    <left_joint>wheell_joint</left_joint>
-    <right_joint>wheelr_joint</right_joint>
+    <left_joint>wheelfl_joint</left_joint>
+    <!-- <left_joint>wheel2l_joint</left_joint> -->
+    <right_joint>wheelfr_joint</right_joint>
+    <!-- <right_joint>wheel2r_joint</right_joint> -->
 
     <!-- kinematics -->
     <wheel_separation>0.2</wheel_separation>
@@ -186,21 +192,23 @@
     <publish_odom_tf>true</publish_odom_tf>
     <publish_wheel_tf>false</publish_wheel_tf>
 
-    <!--<odometry_topic>odom</odometry_topic>-->
+    <odometry_topic>odom</odometry_topic>
     <odometry_frame>odom</odometry_frame>
     <robot_base_frame>base_footprint</robot_base_frame>
   </plugin>
 </gazebo>
 
 <gazebo>
-  <plugin name="wrv3_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+  <plugin name="wrv4_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
     <ros>
       <!-- <namespace>/wrv3</namespace> -->
       <remapping>~/out:=joint_states</remapping>
     </ros>
     <update_rate>30</update_rate>
-    <joint_name>wheell_joint</joint_name>
-    <joint_name>wheelr_joint</joint_name>
+    <joint_name>wheelfl_joint</joint_name>
+    <!-- <joint_name>wheel2l_joint</joint_name> -->
+    <joint_name>wheelfr_joint</joint_name>
+    <!-- <joint_name>wheel2r_joint</joint_name> -->
   </plugin>
 </gazebo>
 

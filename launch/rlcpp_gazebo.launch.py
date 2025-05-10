@@ -14,7 +14,7 @@ def generate_launch_description():
     robot_name = 'WheelRobot'
     # model_name = 'wrv4'
     pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')
-    urdf_model_path = os.path.join(pkg_share, 'urdf/wrv4/wrv4.urdf.xacro')
+    urdf_model_path = os.path.join(pkg_share, 'urdf/wrv3/wrv3.urdf.xacro')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
     world = os.path.join(
