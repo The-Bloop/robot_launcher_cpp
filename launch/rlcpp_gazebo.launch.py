@@ -3,7 +3,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, ExecuteProcess
 from launch.conditions import IfCondition
-from launch.substitutions import Command, LaunchConfiguration, FindExecutable, PathJoinSubstitution
+from launch.substitutions import Command, LaunchConfiguration, FindExecutable
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -11,6 +11,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 def generate_launch_description():
 
     #File Paths
+    robot_name = 'WheelRobot'
+    # model_name = 'wrv4'
     pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')
     urdf_model_path = os.path.join(pkg_share, 'urdf/wrv4/wrv4.urdf.xacro')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
@@ -23,7 +25,7 @@ def generate_launch_description():
 
     #Initializing Launch Configurations
 
-    urdf_model = LaunchConfiguration('urdf_model', default=urdf_model_path)
+    model_name = LaunchConfiguration('model_name', default='wrv4')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     x_pose = LaunchConfiguration('x_pose', default='-0.5')
     y_pose = LaunchConfiguration('y_pose', default='-0.5')
@@ -34,47 +36,54 @@ def generate_launch_description():
 
     #Declaring Launch Arguments
 
-    declare_use_rviz_arg = DeclareLaunchArgument(
+    model_name_arg = DeclareLaunchArgument(
+        name='model_name',
+        default_value='wrv4',
+        description='Enter Version name of Robot'
+    )
+
+    use_rviz_arg = DeclareLaunchArgument(
         name='use_rviz',
         default_value='True',
         description='Flag to control use of RVIZ'
     )
 
-    declare_logger_arg = DeclareLaunchArgument(
+    logger_arg = DeclareLaunchArgument(
         name='log_level',
         default_value="info",
         description='Indicates logging level of Nodes'
     )
         
-    declare_gazebo_log_arg = DeclareLaunchArgument(
+    gazebo_log_arg = DeclareLaunchArgument(
         name='gazebo_log',
         default_value="false",
         description='Indicates gazebo verbosity'
     )
 
-    declare_sim_time_arg = DeclareLaunchArgument(
+    sim_time_arg = DeclareLaunchArgument(
         name='use_sim_time',
         default_value="true",
         description='On/Off Simulation time'
     )
 
-    declare_x_pose_arg = DeclareLaunchArgument(
+    x_pose_arg = DeclareLaunchArgument(
         name='x_pose',
         default_value=x_pose,
         description="Position of robot along X axis"
     )
 
-    declare_y_pose_arg = DeclareLaunchArgument(
+    y_pose_arg = DeclareLaunchArgument(
         name='y_pose',
         default_value=y_pose,
         description="Position of robot along Y axis"
     )
 
-    robot_description = Command([FindExecutable(name='xacro'), ' ',
-                                 PathJoinSubstitution([
-                                     FindPackageShare('robot_launcher_cpp'), 
-                                     'urdf/wrv4', 'wrv4.urdf.xacro'])
-                                     ])
+    # print(x_pose)
+    # print(model_name.variable_name[0].perform())
+    # file_name = 'urdf/' + model_name + '/' + model_name + '.urdf.xacro'
+    # print(file_name)
+
+    robot_description = Command([FindExecutable(name='xacro'), ' ', urdf_model_path])
 
     #Initializing Other Launch Files
     #To change log level of the launch files add the following in launch_arguments:
@@ -126,7 +135,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         arguments=[
             '-topic', 'robot_description',
-            '-entity', 'WheelRobotv4',
+            '-entity', robot_name,
             '-x', x_pose,
             '-y', y_pose,
             '-z', '0.01',
@@ -134,7 +143,7 @@ def generate_launch_description():
         ],
         output='screen',
     )
-    
+
     rviz_node = Node(
         condition=IfCondition(use_rviz),
         package='rviz2',
@@ -148,12 +157,13 @@ def generate_launch_description():
 
     # Add the commands to the launch description
     #Launch Arguments
-    ld.add_action(declare_use_rviz_arg)
-    ld.add_action(declare_logger_arg)
-    ld.add_action(declare_gazebo_log_arg)
-    ld.add_action(declare_sim_time_arg)
-    ld.add_action(declare_x_pose_arg)
-    ld.add_action(declare_y_pose_arg)
+    ld.add_action(model_name_arg)
+    ld.add_action(use_rviz_arg)
+    ld.add_action(logger_arg)
+    ld.add_action(gazebo_log_arg)
+    ld.add_action(sim_time_arg)
+    ld.add_action(x_pose_arg)
+    ld.add_action(y_pose_arg)
 
     #Launch Files
     ld.add_action(gzserver_launch)
