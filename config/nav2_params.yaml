@@ -177,7 +177,7 @@ controller_server:
           "PathDist",
           "GoalDist",
         ]
-      BaseObstacle.scale: 5.0
+      BaseObstacle.scale: 10.0
       PathAlign.scale: 15.0
       PathAlign.forward_point_distance: 0.1
       GoalAlign.scale: 24.0
@@ -185,8 +185,8 @@ controller_server:
       PathDist.scale: 32.0
       GoalDist.scale: 24.0
       RotateToGoal.scale: 15.0 #32.0
-      RotateToGoal.slowing_factor: 1.0
-      RotateToGoal.lookahead_time: -1.0
+      RotateToGoal.slowing_factor: -1.0
+      RotateToGoal.lookahead_time: 1.0
     RotatePath:
       plugin: "nav2_rotation_shim_controller::RotationShimController"
       angular_dist_threshold: 0.785

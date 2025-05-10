@@ -32,70 +32,14 @@
     </collision>
 </link> 
 
-<joint name="wheel2l_joint" type="continuous">
-    <origin xyz="-0.1 0.1125 -0.0375" rpy="-1.571 0 0"/>
-    <parent link="base_link"/>
-    <child link="wheel2l_link"/>
-    <axis xyz="0 0 1"/>
-</joint>
-
-<link name="wheel2l_link">
-    <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.303"/>
-        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-    <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-            <cylinder radius="0.05" length="0.025"/>
-        </geometry>
-        <material name="yellow"/>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-            <cylinder radius="0.05" length="0.025"/>
-        </geometry>
-    </collision>
-</link>
-
-<joint name="wheel2r_joint" type="continuous">
-    <origin xyz="-0.1 -0.1125 -0.0375" rpy="-1.571 0 0"/>
-    <parent link="base_link"/>
-    <child link="wheel2r_link"/>
-    <axis xyz="0 0 1"/>
-</joint>
-
-<link name="wheel2r_link">
-    <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.303"/>
-        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-    <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-            <cylinder radius="0.05" length="0.025"/>
-        </geometry>
-        <material name="yellow"/>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-            <cylinder radius="0.05" length="0.025"/>
-        </geometry>
-    </collision>
-</link>
-
-<joint name="wheel1l_joint" type="continuous">
+<joint name="wheelfl_joint" type="continuous">
     <origin xyz="0.1 0.1125 -0.0375" rpy="-1.571 0 0"/>
     <parent link="base_link"/>
-    <child link="wheel1l_link"/>
+    <child link="wheelfl_link"/>
     <axis xyz="0 0 1"/>
 </joint>
 
-<link name="wheel1l_link">
+<link name="wheelfl_link">
     <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.303"/>
@@ -116,14 +60,14 @@
     </collision>
 </link>
 
-<joint name="wheel1r_joint" type="continuous">
+<joint name="wheelfr_joint" type="continuous">
     <origin xyz="0.1 -0.1125 -0.0375" rpy="-1.571 0 0"/>
     <parent link="base_link"/>
-    <child link="wheel1r_link"/>
+    <child link="wheelfr_link"/>
     <axis xyz="0 0 1"/>
 </joint>
 
-<link name="wheel1r_link">
+<link name="wheelfr_link">
     <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.303"/>
@@ -135,6 +79,62 @@
             <cylinder radius="0.05" length="0.025"/>
         </geometry>
         <material name="red"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheelbl_joint" type="continuous">
+    <origin xyz="-0.1 0.1125 -0.0375" rpy="1.571 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheelbl_link"/>
+    <axis xyz="0 0 1"/>
+</joint>
+
+<link name="wheelbl_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.303"/>
+        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="yellow"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheelbr_joint" type="continuous">
+    <origin xyz="-0.1 -0.1125 -0.0375" rpy="1.571 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheelbr_link"/>
+    <axis xyz="0 0 1"/>
+</joint>
+
+<link name="wheelbr_link">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.303"/>
+        <inertia ixx="2.05e-04" iyy="2.05e-04" izz="3.79e-04" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="yellow"/>
     </visual>
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>

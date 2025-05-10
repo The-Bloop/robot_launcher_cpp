@@ -5,20 +5,24 @@
   <material>Gazebo/White</material>
 </gazebo>
 
-<gazebo reference='wheel2l_link'>
+<gazebo reference='wheelfl_link'>
   <material>Gazebo/Red</material>
 </gazebo>
 
-<gazebo reference='wheel2r_link'>
+<gazebo reference='wheelfr_link'>
   <material>Gazebo/Red</material>
 </gazebo>
 
-<gazebo reference='wheel1l_link'>
-  <material>Gazebo/Red</material>
+<gazebo reference='wheelbl_link'>
+  <material>Gazebo/Yellow</material>
+  <mu1 value="0.0"/>
+  <mu2 value="0.0"/>
 </gazebo>
 
-<gazebo reference='wheel1r_link'>
-  <material>Gazebo/Red</material>
+<gazebo reference='wheelbr_link'>
+  <material>Gazebo/Yellow</material>
+  <mu1 value="0.0"/>
+  <mu2 value="0.0"/>
 </gazebo>
 
 <gazebo reference='camera_link'>
@@ -168,9 +172,9 @@
 
     <update_rate>30</update_rate>
     <!-- wheels -->
-    <left_joint>wheel1l_joint</left_joint>
+    <left_joint>wheelfl_joint</left_joint>
     <!-- <left_joint>wheel2l_joint</left_joint> -->
-    <right_joint>wheel1r_joint</right_joint>
+    <right_joint>wheelfr_joint</right_joint>
     <!-- <right_joint>wheel2r_joint</right_joint> -->
 
     <!-- kinematics -->
@@ -178,8 +182,8 @@
     <wheel_diameter>0.1</wheel_diameter>
 
     <!-- limits -->
-    <max_wheel_torque>40</max_wheel_torque>
-    <max_wheel_acceleration>2.0</max_wheel_acceleration>
+    <max_wheel_torque>20</max_wheel_torque>
+    <max_wheel_acceleration>1.0</max_wheel_acceleration>
 
     <command_topic>cmd_vel</command_topic>
 
@@ -188,7 +192,7 @@
     <publish_odom_tf>true</publish_odom_tf>
     <publish_wheel_tf>false</publish_wheel_tf>
 
-    <!--<odometry_topic>odom</odometry_topic>-->
+    <odometry_topic>odom</odometry_topic>
     <odometry_frame>odom</odometry_frame>
     <robot_base_frame>base_footprint</robot_base_frame>
   </plugin>
@@ -201,9 +205,9 @@
       <remapping>~/out:=joint_states</remapping>
     </ros>
     <update_rate>30</update_rate>
-    <joint_name>wheel1l_joint</joint_name>
+    <joint_name>wheelfl_joint</joint_name>
     <!-- <joint_name>wheel2l_joint</joint_name> -->
-    <joint_name>wheel1r_joint</joint_name>
+    <joint_name>wheelfr_joint</joint_name>
     <!-- <joint_name>wheel2r_joint</joint_name> -->
   </plugin>
 </gazebo>

@@ -276,8 +276,8 @@
       </sensor>
     </link>
 
-    <link name='wheel2l_link'>
-      <pose relative_to='wheel2l_joint'>0 0 0 0 -0 0</pose>
+    <link name='wheelfl_link'>
+      <pose relative_to='wheelfl_joint'>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.303</mass>
@@ -290,7 +290,7 @@
           <izz>0.000758</izz>
         </inertia>
       </inertial>
-      <collision name='wheel2l_link_collision'>
+      <collision name='wheelfl_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -298,8 +298,16 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
+        <!-- <surface>
+          <friction>
+            <ode>
+              <mu>0.00</mu>
+              <mu2>0.00</mu2>
+            </ode>
+          </friction>
+        </surface> -->
       </collision>
-      <visual name='wheel2l_link_visual'>
+      <visual name='wheelfl_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -316,8 +324,8 @@
       </visual>
     </link>
 
-    <link name='wheel2r_link'>
-      <pose relative_to='wheel2r_joint'>0 0 0 0 -0 0</pose>
+    <link name='wheelfr_link'>
+      <pose relative_to='wheelfr_joint'>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.303</mass>
@@ -330,7 +338,7 @@
           <izz>0.000758</izz>
         </inertia>
       </inertial>
-      <collision name='wheel2r_link_collision'>
+      <collision name='wheelfr_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -338,8 +346,16 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
+        <!-- <surface>
+          <friction>
+            <ode>
+              <mu>0.00</mu>
+              <mu2>0.00</mu2>
+            </ode>
+          </friction>
+        </surface> -->
       </collision>
-      <visual name='wheel2r_link_visual'>
+      <visual name='wheelfr_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -356,8 +372,8 @@
       </visual>
     </link>
 
-    <link name='wheel1l_link'>
-      <pose relative_to='wheel1l_joint'>0 0 0 0 -0 0</pose>
+    <link name='wheelbl_link'>
+      <pose relative_to='wheelbl_joint'>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.303</mass>
@@ -370,7 +386,7 @@
           <izz>0.000758</izz>
         </inertia>
       </inertial>
-      <collision name='wheel1l_link_collision'>
+      <collision name='wheelbl_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -378,8 +394,16 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00</mu>
+              <mu2>0.00</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
-      <visual name='wheel1l_link_visual'>
+      <visual name='wheelbl_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -389,15 +413,15 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Red</name>
+            <name>Gazebo/Yellow</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
       </visual>
     </link>
 
-    <link name='wheel1r_link'>
-      <pose relative_to='wheel1r_joint'>0 0 0 0 -0 0</pose>
+    <link name='wheelbr_link'>
+      <pose relative_to='wheelbr_joint'>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.303</mass>
@@ -410,7 +434,7 @@
           <izz>0.000758</izz>
         </inertia>
       </inertial>
-      <collision name='wheel1r_link_collision'>
+      <collision name='wheelbr_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -418,8 +442,16 @@
             <length> 0.025</length>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00</mu>
+              <mu2>0.00</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
-      <visual name='wheel1r_link_visual'>
+      <visual name='wheelbr_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -429,7 +461,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Red</name>
+            <name>Gazebo/Yellow</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -477,37 +509,37 @@
       </axis>
     </joint>
 
-    <joint name='wheel2l_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.1 0.1125 -0.0375 1.571 -0 0</pose>
+    <joint name='wheelfl_joint' type='revolute'>
+      <pose relative_to='base_link'>0.1 0.1125 -0.0375 -1.571 -0 0</pose>
       <parent>base_link</parent>
-      <child>wheel2l_link</child>
+      <child>wheelfl_link</child>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
 
-    <joint name='wheel2r_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.1 -0.1125 -0.0375 -1.571 0 0</pose>
-      <parent>base_link</parent>
-      <child>wheel2r_link</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
-
-    <joint name='wheel1l_joint' type='revolute'>
-      <pose relative_to='base_link'>0.1 0.1125 -0.0375 1.571 -0 0</pose>
-      <parent>base_link</parent>
-      <child>wheel1l_link</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
-
-    <joint name='wheel1r_joint' type='revolute'>
+    <joint name='wheelfr_joint' type='revolute'>
       <pose relative_to='base_link'>0.1 -0.1125 -0.0375 -1.571 0 0</pose>
       <parent>base_link</parent>
-      <child>wheel1r_link</child>
+      <child>wheelfr_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name='wheelbl_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.1 0.1125 -0.0375 1.571 -0 0</pose>
+      <parent>base_link</parent>
+      <child>wheelbl_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name='wheelbr_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.1 -0.1125 -0.0375 1.571 0 0</pose>
+      <parent>base_link</parent>
+      <child>wheelbr_link</child>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
@@ -522,16 +554,16 @@
 
       <update_rate>30</update_rate>
 
-      <left_joint>wheel1l_joint</left_joint>
-      <!-- <left_joint>wheel2l_joint</left_joint> -->
-      <right_joint>wheel1r_joint</right_joint>
-      <!-- <right_joint>wheel2r_joint</right_joint> -->
+      <left_joint>wheelfl_joint</left_joint>
+      <!-- <left_joint>wheelbl_joint</left_joint> -->
+      <right_joint>wheelfr_joint</right_joint>
+      <!-- <right_joint>wheelbr_joint</right_joint> -->
 
       <wheel_separation>0.2</wheel_separation>
       <wheel_diameter>0.1</wheel_diameter>
 
-      <max_wheel_torque>40</max_wheel_torque>
-      <max_wheel_acceleration>2.0</max_wheel_acceleration>
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
 
       <command_topic>cmd_vel</command_topic>
 
@@ -539,7 +571,7 @@
       <publish_odom_tf>1</publish_odom_tf>
       <publish_wheel_tf>0</publish_wheel_tf>
 
-      <!--<odometry_topic>odom</odometry_topic>-->
+      <odometry_topic>odom</odometry_topic>
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
     </plugin>
@@ -549,10 +581,10 @@
         <remapping>~/out:=joint_states</remapping>
       </ros>
       <update_rate>30</update_rate>
-      <joint_name>wheel1l_joint</joint_name>
-      <!-- <joint_name>wheel2l_joint</joint_name> -->
-      <joint_name>wheel1r_joint</joint_name>
-      <!-- <joint_name>wheel2r_joint</joint_name> -->
+      <joint_name>wheelfl_joint</joint_name>
+      <!-- <joint_name>wheelbl_joint</joint_name> -->
+      <joint_name>wheelfr_joint</joint_name>
+      <!-- <joint_name>wheelbr_joint</joint_name> -->
     </plugin>
 
   </model>
