@@ -202,7 +202,7 @@
     </joint>
 
     <joint name="camera_optical_joint" type="fixed">
-        <origin xyz="0.015 0 0" rpy="0 1.57 0"/>
+        <origin xyz="0.015 0 0" rpy="0 0 0"/>
         <parent link="camera_link"/>
         <child link="camera_color_link"/>
     </joint>
