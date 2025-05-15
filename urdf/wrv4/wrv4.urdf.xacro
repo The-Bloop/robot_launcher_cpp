@@ -230,13 +230,13 @@
   </gazebo>
   <gazebo reference="wheelbl_link">
     <material>Gazebo/Yellow</material>
-    <mu1 value="0.0"/>
-    <mu2 value="0.0"/>
+    <mu1 value="0.01"/>
+    <mu2 value="0.01"/>
   </gazebo>
   <gazebo reference="wheelbr_link">
     <material>Gazebo/Yellow</material>
-    <mu1 value="0.0"/>
-    <mu2 value="0.0"/>
+    <mu1 value="0.01"/>
+    <mu2 value="0.01"/>
   </gazebo>
   <gazebo reference="camera_link">
     <material>Gazebo/Blue</material>
