@@ -10,10 +10,14 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
 
-    robot_name = 'WheelRobot'
-    pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')
-    urdf_model_path = os.path.join(pkg_share, 'urdf/wrv4/wrv4.urdf.xacro')
+    robot_name = 'WheelRobotv3'
+    rob_description_package_name = "wheel_robot_v3"
+    robot_pkg_share = FindPackageShare(package=rob_description_package_name).find(rob_description_package_name)
+    urdf_model_path = os.path.join(robot_pkg_share, 'urdf/robot.urdf.xacro')
+
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
+
+    pkg_share = FindPackageShare(package='robot_launcher_cpp').find("robot_launcher_cpp")
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
     world = os.path.join(
         pkg_share,
@@ -23,7 +27,6 @@ def generate_launch_description():
 
     #Initializing Launch Configurations
 
-    model_name = LaunchConfiguration('model_name', default='wrv4')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     x_pose = LaunchConfiguration('x_pose', default='-0.5')
     y_pose = LaunchConfiguration('y_pose', default='-0.5')
@@ -97,7 +100,7 @@ def generate_launch_description():
 
     robot_localization_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_share, 'launch', 'robot_localization.launch.py')
+            os.path.join(robot_pkg_share, 'launch', 'robot_localization.launch.py')
         ),
     )
 
