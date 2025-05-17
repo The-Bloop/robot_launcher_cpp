@@ -27,7 +27,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     x_pose = LaunchConfiguration('x_pose', default='-0.5')
     y_pose = LaunchConfiguration('y_pose', default='-0.5')
-    use_rviz = LaunchConfiguration('use_rviz', default='true')
+    use_rviz = LaunchConfiguration('use_rviz', default='False')
 
     logger = LaunchConfiguration('log_level', default=["info"])
     gazebo_log = LaunchConfiguration('gazebo_log', default="false")
@@ -42,7 +42,7 @@ def generate_launch_description():
 
     use_rviz_arg = DeclareLaunchArgument(
         name='use_rviz',
-        default_value='True',
+        default_value='False',
         description='Flag to control use of RVIZ'
     )
 
