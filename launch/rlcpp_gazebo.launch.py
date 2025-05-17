@@ -10,9 +10,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
 
-    #File Paths
     robot_name = 'WheelRobot'
-    # model_name = 'wrv4'
     pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')
     urdf_model_path = os.path.join(pkg_share, 'urdf/wrv4/wrv4.urdf.xacro')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
@@ -77,11 +75,6 @@ def generate_launch_description():
         default_value=y_pose,
         description="Position of robot along Y axis"
     )
-
-    # print(x_pose)
-    # print(model_name.variable_name[0].perform())
-    # file_name = 'urdf/' + model_name + '/' + model_name + '.urdf.xacro'
-    # print(file_name)
 
     robot_description = Command([FindExecutable(name='xacro'), ' ', urdf_model_path])
 
@@ -169,7 +162,6 @@ def generate_launch_description():
     ld.add_action(gzserver_launch)
     ld.add_action(gzclient_launch)
     ld.add_action(joint_state_publisher_node)
-    #ld.add_action(ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'], output='screen'))
     ld.add_action(robot_state_publisher_node)
     ld.add_action(gazebo_ros_spawner_node)
     ld.add_action(robot_localization_launch)
