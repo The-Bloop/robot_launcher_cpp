@@ -10,7 +10,7 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    rob_description_package_name = "wheel_robot_v3"
+    rob_description_package_name = "wheel_robot_v4"
     robot_pkg_share = FindPackageShare(package=rob_description_package_name).find(rob_description_package_name)
 
     pkg_share = FindPackageShare(package='robot_launcher_cpp').find('robot_launcher_cpp')

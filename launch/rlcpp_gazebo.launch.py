@@ -3,7 +3,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, ExecuteProcess
 from launch.conditions import IfCondition
-from launch.substitutions import Command, LaunchConfiguration, FindExecutable
+from launch.substitutions import Command, LaunchConfiguration, FindExecutable, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -11,7 +11,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 def generate_launch_description():
 
     robot_name = 'WheelRobotv3'
-    rob_description_package_name = "wheel_robot_v3"
+    rob_description_package_name = "wheel_robot_v4"
     robot_pkg_share = FindPackageShare(package=rob_description_package_name).find(rob_description_package_name)
     urdf_model_path = os.path.join(robot_pkg_share, 'urdf/robot.urdf.xacro')
 
@@ -104,17 +104,16 @@ def generate_launch_description():
         ),
     )
 
+    robot_controller_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(robot_pkg_share, 'launch', 'controller.launch.py')
+        ),
+        launch_arguments={'use_sim_time':use_sim_time}.items()
+    )
+
     #Creating Nodes
     #To control log level of nodes add the following to the node's Arguments:
     # '--ros-args','--log-level',logger
-
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        arguments=[urdf_model_path],
-        parameters=[{'use_sim_time': use_sim_time}],
-        )
 
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
@@ -164,7 +163,7 @@ def generate_launch_description():
     #Launch Files
     ld.add_action(gzserver_launch)
     ld.add_action(gzclient_launch)
-    ld.add_action(joint_state_publisher_node)
+    ld.add_action(robot_controller_launch)
     ld.add_action(robot_state_publisher_node)
     ld.add_action(gazebo_ros_spawner_node)
     ld.add_action(robot_localization_launch)

@@ -10,17 +10,23 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>gazebo_ros_pkgs</depend>
+  <depend>gazebo_ros2_control</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>rclcpp</depend>
   <depend>nav_msgs</depend>
   <depend>tf2</depend>
 
+  <depend>controller_manager</depend>
+  <depend>diff_drive_controller</depend>
+  <depend>joint_state_broadcaster</depend>
+
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>robot_localization</exec_depend>
+  <exec_depend>wheel_robot_v4</exec_depend>
   
 
   <test_depend>ament_lint_auto</test_depend>
