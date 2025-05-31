@@ -10,7 +10,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
 
-    robot_name = 'WheelRobotv3'
+    robot_name = 'WheelRobotv4'
     rob_description_package_name = "wheel_robot_v4"
     robot_pkg_share = FindPackageShare(package=rob_description_package_name).find(rob_description_package_name)
     urdf_model_path = os.path.join(robot_pkg_share, 'urdf/robot.urdf.xacro')
@@ -163,11 +163,11 @@ def generate_launch_description():
     #Launch Files
     ld.add_action(gzserver_launch)
     ld.add_action(gzclient_launch)
-    ld.add_action(robot_controller_launch)
     ld.add_action(robot_state_publisher_node)
     ld.add_action(gazebo_ros_spawner_node)
     ld.add_action(robot_localization_launch)
     ld.add_action(rviz_node)
+    ld.add_action(robot_controller_launch)
     
 
     return ld
